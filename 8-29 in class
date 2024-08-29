@@ -1,0 +1,33 @@
+public class test {
+
+    public static int sums(int args) {
+        int answer = 0;
+        for (int i=0; i<args; i++) {
+            if (i % 5 == 0) {
+                answer += i;
+            } else if (i % 7 == 0) {
+                answer += i;
+            }
+        }
+        return answer;
+    }
+
+
+    public static Boolean repeats(int[] args) {
+        for (int i=0; i<args.length-1; i++) {
+            for (int y=i+1; y<args.length; y++) {
+                if ((args[i])==(args[y])) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    }
+
+
+
+    public static void main(String[] args) {
+        System.out.println(sums(20));
+    }
+}
