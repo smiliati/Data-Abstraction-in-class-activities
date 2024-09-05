@@ -1,4 +1,4 @@
-public class test {
+public class warmUp {
 
     public static int sums(int args) {
         int answer = 0;
