@@ -1,4 +1,3 @@
-import java.util.HashMap;
 
 public class symmetricPairs {
     //given an array of pairs, return the pairs that have symmetric pairs
