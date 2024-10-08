@@ -52,7 +52,65 @@ public class Trees {
             return curr;
         }
 
+    }
 
+    //I WROTE:
+    public boolean isBalanced(TreeNode root) { // checks if the tree is height balanced (left and right height differs by <= 1)
+        int leftHeight = root.leftHeight(root);
+        int rightHeight = root.rightHeight(root);
+        if (abs(leftHeight - rightHeight) <= 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public int leftHeight(TreeNode node) { //returns the height of the node you pass in as the parameter
+        TreeNode current = node;
+        int leftHeight = 0;
+        while (current.left != null) {
+            leftHeight++;
+            current = current.left;
+        }
+        return leftHeight;
+    }
+    public int rightHeight(TreeNode node) {
+        TreeNode current = node;
+        int rightHeight = 0;
+        while (node.right !- null) {
+            rightHeight++;
+            current = current.right;
+        }
+        return rightHeight;
+    }
+
+    //Dr. Tan WROTE:
+    public boolean isBalancedA(Node root) {
+        if (root == null) {
+            return true;
+        }
+        int left = height(root.left);
+        int right = height(root.right);
+        if (Math.abs(left - right) > 1) {
+            return false;
+        } else if (!isBalanced(root.left) || !isBalanced(root.right)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public int height(Node curr) {
+        if (curr == null) {
+            return 0;
+        }
+        int leftHeight = height(curr.left);
+        int rightHeight = height(curr.right);
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    //I WROTE:
+    public TreeNode sortedArrayToBST(int[] nums) {
+        
     }
 
 }
