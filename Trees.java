@@ -41,6 +41,7 @@ public class Trees {
                 root.val = replace.val;
                 root.right = deleteNode(root.right, replace.val);
             }
+            return root;
         }
 
         public Node getSuccessor(Node curr) {
