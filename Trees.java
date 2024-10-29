@@ -107,8 +107,26 @@ public class Trees {
 
         return Math.max(leftHeight, rightHeight) + 1;
     }
+    public int balanceFactor(Node node) {
+        return height(node.right) - height(node.left);
+    }
+    public Node rotateLeft(Node node) {
+        Node rightChild = node.right;
 
-    //DR TAN WROTE:
+        node.right = rightChild.left;
+        rightChild.left = node;
+
+        return rightChild;
+    }
+    public Node rotateRight(Node node) {
+        Node leftChild = node.left;
+
+        node.left = leftChild.right;
+        leftChild.right = node;
+
+        return leftChild;
+    }
+
     public Node sortedArrayToTree(int[] nums) {
         int n = nums.length;
         if (n==0) {
