@@ -55,6 +55,17 @@ public class priorityQueue {
         }
 
         return res;
+
+
+        //OR:
+        Arrays.sort(arr);
+        int n = arr.length;
+
+        for (int i = 0; i < n-1; i++) {
+            int tmp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = tmp;
+        }
     }
 
 }
